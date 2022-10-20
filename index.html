@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div id="numeros">
+            <p></p>
+            <hr>
+            <input type="button" title="Histórico" value="🕒" style="color: var(--corfundo);" onclick="ver_historico()">
+            <input type="button" title="Limpar" value="C" onclick="apagar()" style="color: #E4684C;">
+            <input type="button" value="÷" style="color: var(--corfundo);" onclick="inserir('÷')">
+            <input type="button" title="Apagar" value="DEL" onclick="del()" style="color: var(--corfundo);"><br>
+            <input type="button" value="7" onclick="inserir(7)">
+            <input type="button" value="8" onclick="inserir(8)">
+            <input type="button" value="9" onclick="inserir(9)">
+            <input type="button" value="x" style="color: var(--corfundo);" onclick="inserir('x')"><br>
+            <input type="button" value="4" onclick="inserir(4)">
+            <input type="button" value="5" onclick="inserir(5)">
+            <input type="button" value="6" onclick="inserir(6)">
+            <input type="button" value="-" style="color: var(--corfundo);" onclick="inserir('-')"><br>
+            <input type="button" value="1" onclick="inserir(1)">
+            <input type="button" value="2" onclick="inserir(2)">
+            <input type="button" value="3" onclick="inserir(3)">
+            <input type="button" value="+" style="color: var(--corfundo);" onclick="inserir('+')"><br>
+            <input id="power" type="button" title="ON/OFF" value="ON" style="color: var(--corfundo);" onclick="liga_desliga()">
+            <input type="button" value="0" onclick="inserir(0)">
+            <input type="button" value="," style="color: var(--corfundo);" onclick="inserir('.')">
+            <input class="diferenciado" type="button" value="=" onclick="conta()">
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
