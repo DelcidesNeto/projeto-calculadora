@@ -1,5 +1,6 @@
 var on_off = [true]
 var historico = []
+var tamanho = []
 
 
 function ver_historico(){
@@ -7,7 +8,7 @@ function ver_historico(){
 }
 
 
-function apagar(){
+function limpar(){
     var n = window.document.querySelector('p')
     n.innerHTML = ''
 }
@@ -49,8 +50,14 @@ function liga_desliga(){
 function conta(){
     if (on_off[0] == true){
         var n = window.document.querySelector('p')
-        historico.push(`${n.innerHTML.substring()} = ${eval(n.innerHTML.substring().replace('x', '*').replace('÷', '/'))}`)
-        var total = eval(n.innerHTML.substring().replace('x', '*').replace('÷', '/'))
-        n.innerHTML = total
+        if (n.innerHTML.substring(n.innerHTML.length-1) == '+' || n.innerHTML.substring(n.innerHTML.length-1) == '-' || n.innerHTML.substring(n.innerHTML.length-1) == '÷' || n.innerHTML.substring(n.innerHTML.length-1) == 'x' || n.innerHTML.substring(n.innerHTML.length-1) == '.'){
+            del()
+        }else{
+            if (n.innerHTML.substring().indexOf('+') != -1 || n.innerHTML.substring().indexOf('-') != -1 || n.innerHTML.substring().indexOf('x') != -1 || n.innerHTML.substring().indexOf('÷') != -1){
+                historico.push(`${n.innerHTML.substring()} = ${eval(n.innerHTML.substring().replace('x', '*').replace('÷', '/'))}`)
+                var total = eval(n.innerHTML.substring().replace('x', '*').replace('÷', '/'))
+                n.innerHTML = total
+            }
+        }
     }
 }
